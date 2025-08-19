@@ -1,0 +1,16 @@
+BrasTS/brain/train/good/BrasTS_001068.bmp
+BrasTS/brain/train/good/BrasTS_001563.bmp
+BrasTS/brain/train/good/BrasTS_001448.bmp
+BrasTS/brain/train/good/BrasTS_002814.bmp
+BrasTS/brain/train/good/BrasTS_000000.bmp
+BrasTS/brain/train/good/BrasTS_000200.bmp
+BrasTS/brain/train/good/BrasTS_000400.bmp
+BrasTS/brain/train/good/BrasTS_000600.bmp
+BrasTS/brain/train/good/BrasTS_001000.bmp
+BrasTS/brain/train/good/BrasTS_001200.bmp
+BrasTS/brain/train/good/BrasTS_001400.bmp
+BrasTS/brain/train/good/BrasTS_001600.bmp
+BrasTS/brain/train/good/BrasTS_001800.bmp
+BrasTS/brain/train/good/BrasTS_002000.bmp
+BrasTS/brain/train/good/BrasTS_002200.bmp
+BrasTS/brain/train/good/BrasTS_002400.bmp

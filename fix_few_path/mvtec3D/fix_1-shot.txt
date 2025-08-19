@@ -1,0 +1,10 @@
+mvtec3D/bagel/train/good/mvtec3D_000072.bmp
+mvtec3D/tire/train/good/mvtec3D_003728.bmp
+mvtec3D/dowel/train/good/mvtec3D_001518.bmp
+mvtec3D/foam/train/good/mvtec3D_002103.bmp
+mvtec3D/cable_gland/train/good/mvtec3D_000446.bmp
+mvtec3D/carrot/train/good/mvtec3D_000687.bmp
+mvtec3D/potato/train/good/mvtec3D_002777.bmp
+mvtec3D/rope/train/good/mvtec3D_003157.bmp
+mvtec3D/cookie/train/good/mvtec3D_001228.bmp
+mvtec3D/peach/train/good/mvtec3D_002298.bmp

@@ -1,0 +1,2 @@
+BrasTS/brain/train/good/BrasTS_001068.bmp
+BrasTS/brain/train/good/BrasTS_001563.bmp

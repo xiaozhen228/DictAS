@@ -1,0 +1,12 @@
+BTAD/metal2/train/good/BTAD_0981_002080.bmp
+BTAD/metal2/train/good/BTAD_0755_001854.bmp
+BTAD/metal2/train/good/BTAD_0730_001829.bmp
+BTAD/metal2/train/good/BTAD_0278_001377.bmp
+BTAD/wood/train/good/BTAD_0313_000782.bmp
+BTAD/wood/train/good/BTAD_0148_000617.bmp
+BTAD/wood/train/good/BTAD_0127_000596.bmp
+BTAD/wood/train/good/BTAD_0102_000571.bmp
+BTAD/metal1/train/good/BTAD_0040_000040.bmp
+BTAD/metal1/train/good/BTAD_0106_000106.bmp
+BTAD/metal1/train/good/BTAD_0379_000379.bmp
+BTAD/metal1/train/good/BTAD_0307_000307.bmp

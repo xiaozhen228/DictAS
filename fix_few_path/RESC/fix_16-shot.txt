@@ -1,0 +1,16 @@
+RESC/retina/train/good/RESC_000564.bmp
+RESC/retina/train/good/RESC_003992.bmp
+RESC/retina/train/good/RESC_002927.bmp
+RESC/retina/train/good/RESC_001448.bmp
+RESC/retina/train/good/RESC_002205.bmp
+RESC/retina/train/good/RESC_000464.bmp
+RESC/retina/train/good/RESC_001789.bmp
+RESC/retina/train/good/RESC_003382.bmp
+RESC/retina/train/good/RESC_000000.bmp
+RESC/retina/train/good/RESC_000017.bmp
+RESC/retina/train/good/RESC_000040.bmp
+RESC/retina/train/good/RESC_000228.bmp
+RESC/retina/train/good/RESC_003709.bmp
+RESC/retina/train/good/RESC_001516.bmp
+RESC/retina/train/good/RESC_001080.bmp
+RESC/retina/train/good/RESC_001767.bmp

@@ -1,0 +1,3 @@
+BTAD/metal2/train/good/BTAD_0981_002080.bmp
+BTAD/wood/train/good/BTAD_0313_000782.bmp
+BTAD/metal1/train/good/BTAD_0040_000040.bmp

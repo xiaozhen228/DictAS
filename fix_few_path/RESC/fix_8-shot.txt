@@ -1,0 +1,8 @@
+RESC/retina/train/good/RESC_000564.bmp
+RESC/retina/train/good/RESC_003992.bmp
+RESC/retina/train/good/RESC_002927.bmp
+RESC/retina/train/good/RESC_001448.bmp
+RESC/retina/train/good/RESC_002205.bmp
+RESC/retina/train/good/RESC_000464.bmp
+RESC/retina/train/good/RESC_001789.bmp
+RESC/retina/train/good/RESC_003382.bmp

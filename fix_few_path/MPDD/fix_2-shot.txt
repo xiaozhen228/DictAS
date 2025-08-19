@@ -1,0 +1,12 @@
+MPDD/bracket_brown/train/good/MPDD_095_000463.bmp
+MPDD/bracket_brown/train/good/MPDD_104_000472.bmp
+MPDD/connector/train/good/MPDD_022_000822.bmp
+MPDD/connector/train/good/MPDD_111_000911.bmp
+MPDD/tubes/train/good/MPDD_047_001170.bmp
+MPDD/tubes/train/good/MPDD_091_001214.bmp
+MPDD/metal_plate/train/good/MPDD_035_001007.bmp
+MPDD/metal_plate/train/good/MPDD_003_000975.bmp
+MPDD/bracket_black/train/good/MPDD_164_000164.bmp
+MPDD/bracket_black/train/good/MPDD_160_000160.bmp
+MPDD/bracket_white/train/good/MPDD_027_000657.bmp
+MPDD/bracket_white/train/good/MPDD_064_000694.bmp

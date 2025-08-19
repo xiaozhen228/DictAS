@@ -1,0 +1,4 @@
+RESC/retina/train/good/RESC_000564.bmp
+RESC/retina/train/good/RESC_003992.bmp
+RESC/retina/train/good/RESC_002927.bmp
+RESC/retina/train/good/RESC_001448.bmp

@@ -1,0 +1,15 @@
+mvtec/bottle/train/good/mvtec_000091.bmp
+mvtec/cable/train/good/mvtec_000296.bmp
+mvtec/capsule/train/good/mvtec_000841.bmp
+mvtec/carpet/train/good/mvtec_001261.bmp
+mvtec/grid/train/good/mvtec_001416.bmp
+mvtec/hazelnut/train/good/mvtec_001766.bmp
+mvtec/leather/train/good/mvtec_002266.bmp
+mvtec/metal_nut/train/good/mvtec_002724.bmp
+mvtec/pill/train/good/mvtec_003135.bmp
+mvtec/screw/train/good/mvtec_003669.bmp
+mvtec/tile/train/good/mvtec_004039.bmp
+mvtec/toothbrush/train/good/mvtec_004276.bmp
+mvtec/transistor/train/good/mvtec_004324.bmp
+mvtec/wood/train/good/mvtec_004828.bmp
+mvtec/zipper/train/good/mvtec_005088.bmp
