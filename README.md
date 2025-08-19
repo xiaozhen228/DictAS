@@ -40,7 +40,7 @@ pip install -r requirements.txt
  
 
 
-> **1、Download and prepare the original [MVTec-AD](https://www.mvtec.com/company/research/datasets/mvtec-ad/downloads), [VisA](https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar), [MPDD](https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar), and [mvtec3D](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad/downloads) from the official websites to any desired path.**
+> **1、Download and prepare the original [MVTec-AD](https://www.mvtec.com/company/research/datasets/mvtec-ad/downloads), [VisA](https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar), [MPDD](https://github.com/stepanje/MPDD), and [mvtec3D](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad/downloads) from the official websites to any desired path.**
 
 >**2. Download our curated datasets [BTAD](https://arxiv.org/pdf/2104.10036), [BrasTS](https://arxiv.org/pdf/2107.02314) and [RESC](https://arxiv.org/pdf/2008.03632) from Google Drive: [DATA_Google.zip](https://drive.google.com/file/d/1DDFIquy_rcfcgqIymYIY76kBTXmeLpOj/view?usp=drive_link), and assume that the extracted folder is named DATA_Google. It is worth noting that DATA_Google additionally contains samples from two natural scene datasets (Ade20K and VOC2012), which may serve as optional auxiliary training sets.**
 
@@ -227,6 +227,16 @@ The format of the standardized datasets is as follows:
 ├── meta_RESC.json
 ├── meta_Ade.json
 ├── meta_VOC.json
+
+
+./datasets
+├── DTD
+    ├── images
+        ├── banded
+        ├── blotchy
+        ├── ---
+    ├── imdb
+    ├── labels
 ```
 
 **This paper does not introduce any new datasets. If you wish to use the aforementioned datasets, please comply with the usage policies of the original sources.**
@@ -259,7 +269,13 @@ If you wish to automatically and randomly select normal samples and conduct mult
 
 If you find dataset preparation cumbersome and just want to quickly see the few-shot segmentation results, or simply want to play with the code, you can directly use **./test_single_image.py**, which allows testing on a single image given its input path.
 
-#### **5. Experimental Setting**
+
+#### **5. Can DictAS use other backbones besides CLIP, such as DINOv2 or DINOv3?**
+
+> Yes, DictAS supports all ViT-based backbones. If the model does not include a text encoder, the Text Alignment Constraint can simply be removed during training.
+
+
+#### **6. Experimental Setting**
 Note that we perform auxiliary training on one industrial dataset and directly infer on other industrial and medical datasets. Since the categories in VisA do not overlap with those in the other datasets, we use VisA as the auxiliary training set. To assess VisA itself, we fine-tune our model on the MVTec-AD dataset.
 
 In addition, natural scene datasets such as Ade20K or VOC2012 can also serve as auxiliary training sets to enhance the dictionary lookup capability of DictAS. This only requires changing the **--dataset** parameter in **train.py** to Ade or VOC.
