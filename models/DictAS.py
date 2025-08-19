@@ -78,7 +78,10 @@ class Attn_Block(nn.Module):
         x = scaled_dot_product_attention(q, k, v, is_causal=False)  # [B, num_heads, N, head_dim]
         x = x.transpose(1, 2).reshape(B, N, C)
         # ----------------- Way1 ------------------#
-
+        '''
+        Way 1 and Way 2 are essentially the same, but scaled_dot_product_attention supports testing with more support 
+        samples due to its internal optimization. This helps alleviate high GPU memory usage when the dictionary is very large.
+        '''
         # ----------------- Way2 ------------------#
         # attn = torch.einsum('bnkc,bmkc->bknm', q, k) * self.scale
         # attn = attn.softmax(dim = -1)
@@ -138,19 +141,19 @@ class MyDictionary(nn.Module):
         B, N, C = patch_feature_query.shape 
         B, M, C = patch_feature_support.shape 
 
-
+        # Dictionary Construction
         F_Q = self.Query_Generator(patch_feature_query).reshape(B, N, self.num_heads, C // self.num_heads)
         F_K = self.Key_Generator(patch_feature_support).reshape(B, M, self.num_heads, C // self.num_heads)
         F_V = self.Value_Generator(patch_feature_support).reshape(B, M, self.num_heads, C // self.num_heads)
 
-        # 开始字典查询
+        # Dictionary Lookup
         attn = torch.einsum('bnkc,bmkc->bknm', F_Q, F_K) * self.scale
         attn = self.SPM(attn, adim = -1)
         x = torch.einsum('bknm,bmkc->bnkc', attn, F_V).reshape(B, N, C) 
         return x
     
     def forward(self, img_ano_features, img_good_features, mode = "train_self", gt_normal = None, gt_abnormal = None):
-        if mode == "train_self":
+        if mode == "train_self":   # Training mode
             Retrived_list_ClS = []
             kernel_size_list = self.args.scale_list
             B, L, C = img_ano_features[0].shape
@@ -184,9 +187,9 @@ class MyDictionary(nn.Module):
                     loss_a = dis_a.reshape(dis_a.shape[0], -1)
                     loss_a = torch.sum(loss_a, dim = 1) / (torch.sum(gt_abnormal.reshape(gt_abnormal.shape[0], -1), dim = 1) + 1e-6)
                     loss_CQC_temp = loss_n - loss_a
-                    loss_CQC_temp[loss_a == 0] = 0   # 防止纯正常样本
+                    loss_CQC_temp[loss_a == 0] = 0 
                     #print(loss_temp)
-                    loss_CQC_temp[loss_CQC_temp <0] = 0  # 正常正则化
+                    loss_CQC_temp[loss_CQC_temp <0] = 0  
                     #print(loss_temp)
                     loss_CQC = torch.sum(loss_CQC_temp) / (torch.sum(loss_CQC_temp!=0)+ 1e-6)
                     #print("hhh",loss_reg_con)
@@ -195,7 +198,7 @@ class MyDictionary(nn.Module):
                     loss_query_all = loss_query_all + loss_query
             return [loss_CQC_all, loss_query_all], Retrived_list_ClS
         
-        else: 
+        else:   # Testing or eval mode
             anomaly_map_list = []
             Retrived_list_ClS = []
             kernel_size_list = self.args.scale_list
@@ -227,17 +230,3 @@ class MyDictionary(nn.Module):
                 anomaly_map = anomaly_map_list[i]
                 anomaly_map_list[i] = (1 - (anomaly_map + 1)*0.5)
             return anomaly_map_list, Retrived_list_ClS
-
-
-        
-
-    
-
-
-
-
-        
-
-
-
-
