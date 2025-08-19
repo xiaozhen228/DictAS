@@ -239,7 +239,7 @@ The format of the standardized datasets is as follows:
     ├── labels
 ```
 
-**This paper does not introduce any new datasets. If you wish to use the aforementioned datasets, please comply with the usage policies of the original sources.**
+**This paper does not introduce any new datasets. If you wish to use the aforementioned datasets, please comply with the usage policies of the original sources. The dataset organization strategy is identical to our previous works [VCP-CLIP](https://github.com/xiaozhen228/VCP-CLIP) and [Bayes-PFL](https://github.com/xiaozhen228/Bayes-PFL), and can therefore be directly applied to our earlier zero-shot anomaly detection projects.**
 
 
 ## Run Experiments
@@ -279,10 +279,34 @@ If you find dataset preparation cumbersome and just want to quickly see the few-
 Note that we perform auxiliary training on one industrial dataset and directly infer on other industrial and medical datasets. Since the categories in VisA do not overlap with those in the other datasets, we use VisA as the auxiliary training set. To assess VisA itself, we fine-tune our model on the MVTec-AD dataset.
 
 In addition, natural scene datasets such as Ade20K or VOC2012 can also serve as auxiliary training sets to enhance the dictionary lookup capability of DictAS. This only requires changing the **--dataset** parameter in **train.py** to Ade or VOC.
+
+#### **7. Why do we conduct research on class-generalizable few-shot anomaly segmentation?**
+
+In our prior studies on zero-shot anomaly detection, including [VCP-CLIP](https://github.com/xiaozhen228/VCP-CLIP) and [Bayes-PFL](https://github.com/xiaozhen228/Bayes-PFL), we observed that the anomaly perception capability of CLIP models trained via prompt learning remains limited. While they achieve desirable performance on certain texture categories (e.g., wood), their performance drops significantly on other object categories (e.g., cable). This limitation arises because some anomalies are defined solely in relation to normal samples. 
+
+In contrast to previous zero-shot anomaly detection approaches that rely on auxiliary datasets to learn decision boundaries between normal and abnormal samples, DictAS adopts a dictionary lookup strategy rather than modeling category-specific information, thereby enabling the model to remain unaffected by variations across different product categories. The core assumption of DictAS is that normal patch features in a test image can be easily reconstructed from the support image features, whereas anomalous patch features cannot.
+
 ## Citation
 Please cite the following paper if the code help your project:
 
 ```bibtex
+@inproceedings{qu2024vcp,
+  title={Vcp-clip: A visual context prompting model for zero-shot anomaly segmentation},
+  author={Qu, Zhen and Tao, Xian and Prasad, Mukesh and Shen, Fei and Zhang, Zhengtao and Gong, Xinyi and Ding, Guiguang},
+  booktitle={European Conference on Computer Vision},
+  pages={301--317},
+  year={2024},
+  organization={Springer}
+}
+
+@InProceedings{Qu_2025_CVPR,
+    author    = {Qu, Zhen and Tao, Xian and Gong, Xinyi and Qu, ShiChen and Chen, Qiyu and Zhang, Zhengtao and Wang, Xingang and Ding, Guiguang},
+    title     = {Bayesian Prompt Flow Learning for Zero-Shot Anomaly Detection},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {30398-30408}
+}
 
 ```
 
