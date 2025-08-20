@@ -5,7 +5,7 @@
 Zhen Qu, Xian Tao, Xinyi Gong, ShiChen Qu, Xiaopei Zhang,
 Xingang Wang, Fei Shen, Zhengtao Zhang, Mukesh Prasad, Guiguang Ding
 
-[Paper link]()
+[Paper link](https://www.arxiv.org/abs/2508.13560)
 
 Recent vision-language models (e.g., CLIP) have demonstrated remarkable class-generalizable ability to unseen classes in few-shot anomaly segmentation (FSAS), leveraging supervised prompt learning or fine-tuning on seen classes. However, their cross-category generalization largely depends on prior knowledge of real seen anomaly samples. In this paper, we propose a novel framework, namely DictAS, which enables a unified model to detect visual anomalies in unseen object categories without any retraining on the target data, only employing a few normal reference images as visual prompts. The insight behind DictAS is to transfer dictionary lookup capabilities to the FSAS task for unseen classes via self-supervised learning, instead of merely memorizing the normal and abnormal feature patterns from the training set. Specifically, DictAS mainly consists of three components: (1) **Dictionary Construction** - to simulate the index and content of a real dictionary using features from normal reference images. (2) **Dictionary Lookup** - to retrieve queried region features from the dictionary via a sparse lookup strategy. When a query feature cannot be retrieved, it is classified as an anomaly. (3) **Query Discrimination Regularization**- to enhance anomaly discrimination by making abnormal features harder to retrieve from the dictionary. To achieve this, Contrastive Query Constraint and Text Alignment Constraint are further proposed. Extensive experiments on seven public industrial and medical datasets demonstrate that DictAS consistently outperforms state-of-the-art FSAS methods.
 ## Table of Contents
@@ -286,6 +286,11 @@ In our prior studies on zero-shot anomaly detection, including [VCP-CLIP](https:
 
 In contrast to previous zero-shot anomaly detection approaches that rely on auxiliary datasets to learn decision boundaries between normal and abnormal samples, DictAS adopts a dictionary lookup strategy rather than modeling category-specific information, thereby enabling the model to remain unaffected by variations across different product categories. The core assumption of DictAS is that normal patch features in a test image can be easily reconstructed from the support image features, whereas anomalous patch features cannot.
 
+
+#### **8. More deteiled results including few-shot anomaly classification**
+
+Please refer to the Appendix in the paper for more detailed results including few-shot anomaly classification.
+
 ## Citation
 Please cite the following paper if the code help your project:
 
@@ -313,6 +318,14 @@ Please cite the following paper if the code help your project:
 ## Acknowledgements
 We thank the great works [WinCLIP(zqhang)](https://github.com/zqhang/Accurate-WinCLIP-pytorch),  [WinCLIP(caoyunkang)](https://github.com/caoyunkang/WinClip), [RegAD](https://github.com/MediaBrain-SJTU/RegAD), [VCP-CLIP](https://github.com/xiaozhen228/VCP-CLIP),  [APRIL-GAN](https://github.com/ByChelsea/VAND-APRIL-GAN), [Bayes-PFL](https://github.com/xiaozhen228/Bayes-PFL), [FastRecon](https://github.com/FzJun26th/FastRecon), [AnomalyGPT](https://github.com/CASIA-IVA-Lab/AnomalyGPT), [PromptAD](https://github.com/FuNz-0/PromptAD), [MetaUAS](https://github.com/gaobb/MetaUAS) and [ResAD](https://github.com/xcyao00/ResAD) for assisting with our work.
 
+## Todo list
+- [x] Release our DictAS paper
+- [x] Release our model weights
+- [ ] Release our training code of DictAS
+- [ ] Release the training code with alternative backbones, such as ImageBind and DINOv2.
+- [ ] ---
+
 ## License
 The code and dataset in this repository are licensed under the [MIT license](https://mit-license.org/).
+
 
