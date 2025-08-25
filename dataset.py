@@ -321,27 +321,6 @@ class MyDataset(data.Dataset):
 			img_good = torch.stack(img_good_list, dim = 0)
 			img_good_mask= torch.stack(img_good_mask_list, dim = 0)
 			return {'img_ano': img_ano, 'img_ano_mask': img_ano_mask, 'img_good': img_good, 'img_good_mask':img_good_mask, 'cls_name': cls_name, "img_ano_path": os.path.join(self.root, img_ano_path), "anomaly":anomaly, "ano_path":img_ano_path }
-		
-		elif self.mode == "test_zero":
-			img_ano_path, mask_ano_path, cls_name, specie_name, anomaly = data['img_path'], data['mask_path'], data['cls_name'], \
-										data['specie_name'], data['anomaly']
-			img_ano = Image.open(os.path.join(self.root, img_ano_path)).convert("RGB")
-			if anomaly == 1: 
-				img_ano_mask = np.array(Image.open(os.path.join(self.root, mask_ano_path)).convert('L')) > 0
-				img_ano_mask = Image.fromarray(img_ano_mask.astype(np.uint8) * 255, mode='L')
-			else:
-				img_ano_mask = Image.fromarray(np.zeros((img_ano.size[1], img_ano.size[0])), mode='L')
-			img_good, img_good_mask = self.Trans_good(img_ano, img_ano_mask)
-			img_good_list = [img_good]
-			img_good_mask_list = [img_good_mask]
-			img_ano = self.transform(img_ano) if self.transform is not None else img_ano 
-			img_ano_mask = self.target_transform(
-				img_ano_mask) if self.target_transform is not None and img_ano_mask is not None else img_ano_mask
-			img_good_list = [self.transform(img_good) for img_good in img_good_list]
 
-			img_good_mask_list = [self.target_transform(img_good_mask) for img_good_mask in img_good_mask_list]
-			img_good = torch.stack(img_good_list, dim = 0)
-			img_good_mask= torch.stack(img_good_mask_list, dim = 0)
 
-			return {'img_ano': img_ano, 'img_ano_mask': img_ano_mask, 'img_good': img_good, 'img_good_mask':img_good_mask, 'cls_name': cls_name, "anomaly":anomaly, "img_ano_path": os.path.join(self.root, img_ano_path)}
 
