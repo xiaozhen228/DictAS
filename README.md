@@ -321,7 +321,7 @@ We thank the great works [WinCLIP(zqhang)](https://github.com/zqhang/Accurate-Wi
 ## Todo list
 - [x] Release our DictAS paper
 - [x] Release our model weights
-- [ ] Release our training code of DictAS
+- [x] Release our training code of DictAS
 - [ ] Release the training code with alternative backbones, such as ImageBind and DINOv2.
 - [ ] ---
 
