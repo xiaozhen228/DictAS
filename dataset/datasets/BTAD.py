@@ -94,7 +94,7 @@ class BTAD_dataset():
                                     raw_mask = cv2.imread(raw_mask_path,cv2.IMREAD_GRAYSCALE)
                                     if binary:
                                         raw_mask = self.Binary(raw_mask.copy())
-                                        if to_255:  #只有设置了二值化255才有意义
+                                        if to_255: 
                                             raw_mask =  raw_mask * 255
                                     new_class_name = self.dataset_map[data_name]
                                     save_img_path = os.path.join(des_path_root,new_class_name,"test","anomaly",f"BTAD_{classes}_"+str(img_name_id)+ "_" +str(id).zfill(6)+".bmp")
